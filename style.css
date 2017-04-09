@@ -1,0 +1,38 @@
+	#full{
+		background-color: black;
+		height: 1000px;
+		width: 100%;
+	}
+	#title{
+		color: white;
+		font-size:large;
+		text-align: center;
+	}
+	#header2{
+		color:white;
+	
+		text-align: center;
+	}
+	#guessed{
+		color:white;
+	}
+	#score{
+		color: white;
+		font-size: large;
+	}
+	#cscore{
+		color: white;
+		font-size: large;		
+	}
+	#guesses{
+		color: white;
+		font-size: large;		
+	}
+	#center{
+		height: 100%;
+		background-color: black;
+	}
+	#cguesses{
+		color: white;
+		font-size: larger;
+	}
