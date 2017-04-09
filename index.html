@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+	<title>Psychic</title>
+</head>
+<body>
+	<div id = "full" class="container">
+		<div> <!--row 1 -->
+			<div id="header" class="col-md-12">
+				<h1 id="title">The Psychic Webpage</h1>
+			</div>
+		</div> <!-- closes row 1-->
+		<div> <!--Row 2-->
+			<div id="header2" class="col-md-12">
+				<h2>Start typing to guess letters</h2>
+			</div>
+		</div> <!-- closes Row 2 -->
+		<div class="row"> <!-- Row 3 -->
+			<div class="col-md-3">
+			<p id="score">Score:</p>
+			</div>
+		</div> <!-- closes Row 3 -->
+		<div> <!--Row 4 -->
+			<div class="col-md-3">
+				
+			</div>
+		</div><!--closes row 4  -->
+	</div>
+
+</body>
+<style type="text/css">
+	#full{
+		background-color: black;
+		height: 100%;
+		width: 100%;
+	}
+	#title{
+		color: white;
+		font-size:large;
+		text-align: center;
+	}
+	#header2{
+		color:white;
+	
+		text-align: center;
+	}
+	#guessed{
+		color:white;
+	}
+
+</style>
+
+<script type="text/javascript">
+	//set array for list of potential words
+	//each word is also an array
+
+
+	//assign varibale for comp. score 
+		var compScore = 0;
+		var userScore = 0;
+	
+	// list of letters the game "knows"
+
+		var vocab = ["a","b","c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x","y", "z"];
+//testing with console.log
+	//console.log(vocab.length);
+	//console.log(vocab[0])
+
+
+     document.onkeyup = function(event) {
+     		var userGuess = event.key;
+     		var computerGuess = vocab[Math.floor(Math.random() * vocab.length)];
+					
+					//console.log(computerGuess);
+     		for (var i = 0; i < computerGuess.length; i++) {
+     								console.log(computerGuess[i]); 
+     				if (userGuess === computerGuess[i]) {
+     								alert("you've guessed correctly!")
+     							userScore++;
+     								alert("computer wins"+ compScore);
+     								alert("user score" + userScore);
+     					//document.getElementById("score").innerHTML = "<div>" + score;
+     				} 
+     				else if (userGuess !== computerGuess[i]) {
+     								alert("sorry, try again")
+     							compScore++;
+     							    alert("computer wins"+ compScore);
+     								alert("user wins" + userScore);
+     				}
+     				else{
+
+     				}
+     								//console.log(compScore);
+     								//console.log(computerGuess);
+     								//console.log(userGuess);
+
+     		} //end of for loop		
+     		          		//update score at the end of the loop
+     						//document.write(compScore);
+    						//document.write(userScore);
+     };// end of event
+
+
+
+</script>
+</html>
