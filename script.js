@@ -11,23 +11,24 @@
 	//console.log(vocab.length);
 	//console.log(vocab[0])
 
-//the alerts are redundant 
+//the alerts are redundant they've been commented out
+    var computerGuess = vocab[Math.floor(Math.random() * vocab.length)];
      document.onkeyup = function(event) {
      		var userGuess = event.key;
-     		var computerGuess = vocab[Math.floor(Math.random() * vocab.length)];
-					
 					//console.log(computerGuess);
      		for (var i = 0; i < computerGuess.length; i++) {
-     								console.log(computerGuess[i]); 
+     					console.log(" the correct guess..." +computerGuess[i]); 
      				if (userGuess === computerGuess[i]) {
-     								alert("you've guessed correctly!")
-     							userScore++;
+     					alert("you've guessed correctly!")
+     					userScore++;
+                              computerGuess = vocab[Math.floor(Math.random() * vocab.length)];
+     // document.getElementById("cguesses").innerHTML = "correct answer:  "+ computerGuess[i];
      								//alert("computer wins"+ compScore);
      								//alert("user score" + userScore);
      					document.getElementById("score").innerHTML = ""+ userScore;
      				} 
      				else if (userGuess !== computerGuess[i]) {
-     								alert("sorry, try again")
+     							alert("sorry, try again")
      							compScore++;
      							   // alert("computer wins"+ compScore);
      								//alert("user wins" + userScore);
@@ -35,10 +36,12 @@
      				else{
 
      				}
-     				     document.getElementById("score").innerHTML = "your Score: "+ userScore;
-     				     document.getElementById("cscore").innerHTML = "computer Score: "+ compScore;
-     				     document.getElementById("guesses").innerHTML = "you've guessed:  "+ userGuess;
-                              document.getElementById("cguesses").innerHTML = "correct answer:  "+ computerGuess[i];
+     document.getElementById("score").innerHTML = "your Score: "+ userScore;
+     document.getElementById("cscore").innerHTML = "computer Score: "+ compScore;
+     document.getElementById("guesses").innerHTML = "you've guessed:  "+ userGuess;
+     var guessDiv = document.createElement("div");
+     guessDiv.innerHTML = "you've guessed: " + userGuess;
+     document.getElementById("guessedLetters").appendChild(guessDiv);
      								//console.log(compScore);
      								//console.log(computerGuess);
      								//console.log(userGuess);
